@@ -3,9 +3,15 @@ import os
 from dotenv import load_dotenv
 import json
 import re
+import pathlib
 
 # Load environment variables from config.env
-load_dotenv('config.env')
+
+root_dir = pathlib.Path(__file__).resolve().parent.parent
+env_path = root_dir/'config.env'
+
+load_dotenv(dotenv_path=env_path)
+
 
 GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'YOUR_GEMINI_API_KEY')
 GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent'
@@ -59,9 +65,7 @@ def batch_normalize_entities_gemini(entities: list[str]) -> list[dict]:
     if match:
         return json.loads(match.group())
     else:
-        # Fallback: try to parse the whole response
         try:
             return json.loads(response)
         except Exception:
-            # Return a list of dicts with None if parsing fails
             return [{"mention": e, "canonical_name": None} for e in entities] 

@@ -23,10 +23,16 @@ batch_preprocessing/
 ├── batch_context_analysis.py    # Batch context disambiguation (Gemini)
 ├── batch_dbpedia_uri.py         # Batch DBpedia URI lookup (SPARQL)
 ├── full_batch_pipeline.py       # Orchestrates the full workflow
-├── example_*.py                # Example scripts for each step and the full pipeline
 ```
 
 ---
+```
+examples/*  # Contains all examples scripts for the batch preprocessing full pipeline
+```
+
+```
+hybrid_linking/*   # Core initial implementation for DBpedia
+```
 
 ## Module Responsibilities
 
@@ -102,9 +108,6 @@ batch_preprocessing/
 ## Requirements
 - Python 3.8+
 - Gemini API key (for LLM steps)
-- Internet access (for DBpedia SPARQL)
+- DBpedia SPARQL
 
 ---
-
-## Contact
-For questions or contributions, see the project repository or contact the maintainers. 

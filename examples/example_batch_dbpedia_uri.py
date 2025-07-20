@@ -43,4 +43,4 @@ try:
     list_dicts = batch_dbpedia_uri_lookup(canonical_names, output_format="list")
     print(list_dicts)
 except Exception as e:
-    print("Exception during List of Dicts output:", e) 
+    print("Exception during List of Dicts output:", e)

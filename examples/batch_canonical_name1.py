@@ -42,4 +42,4 @@ try:
 except Exception as e:
     print("\nException during batch normalization:", e)
     if raw_response:
-        print("\nRaw Gemini response (for debugging):\n", raw_response) 
+        print("\nRaw Gemini response (for debugging):\n", raw_response)

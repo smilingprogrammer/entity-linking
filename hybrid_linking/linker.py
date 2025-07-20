@@ -1,5 +1,5 @@
-from .gemini_api import call_gemini
-from .dbpedia_sparql import search_dbpedia_entity
+from hybrid_linking.gemini_api import call_gemini
+from hybrid_linking.dbpedia_sparql import search_dbpedia_entity
 from typing import Optional, List, Tuple
 
 def normalize_entity_name(entity_mention: str, context: Optional[str] = None) -> str:

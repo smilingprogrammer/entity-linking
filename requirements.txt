@@ -1,3 +1,4 @@
 SPARQLWrapper
 requests
-python-dotenv 
+python-dotenv
+pandas

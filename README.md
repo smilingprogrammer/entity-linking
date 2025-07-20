@@ -37,6 +37,12 @@ results = full_batch_entity_linking(
 print(results)
 ```
 
+| mention   | context                        | canonical_name      | entity_type | confidence | keywords         | description                  | dbpedia_uri                        |
+|-----------|-------------------------------|---------------------|-------------|------------|------------------|------------------------------|-------------------------------------|
+| Apple     | I work at Apple               | Apple_Inc.          | company     | 0.95       | ["tech", ...]   | Apple Inc. the company       | http://dbpedia.org/resource/Apple_Inc. |
+| Apple     | I eat an apple every day      | Apple               | product     | 0.90       | ["fruit", ...]   | The fruit apple              | http://dbpedia.org/resource/Apple   |
+
+
 ## Input/Output
 - **Input**: List of dicts with 'mention' and 'context', or load from CSV/Excel/JSON
 - **Output**: DataFrame with columns: mention, context, canonical_name, entity_type, confidence, keywords, description, dbpedia_uri
@@ -59,7 +65,7 @@ See [TECHNICAL.md](TECHNICAL.md) for a detailed description of the architecture,
 ## Requirements
 - Python 3.8+
 - Gemini API key (for LLM steps)
-- Internet access (for DBpedia SPARQL)
+- DBpedia SPARQL
 
 ## License
 MIT 

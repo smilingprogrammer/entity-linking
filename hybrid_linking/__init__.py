@@ -13,8 +13,6 @@ from .linker import link_entity_to_dbpedia
 # Convenience function for quick usage
 def create_default_linker():
     """Create a default entity linker with Gemini and DBpedia."""
-    from .llm_provider import GeminiProvider
-    from .knowledge_base import DBpediaKnowledgeBase
     
     gemini = GeminiProvider()
     dbpedia = DBpediaKnowledgeBase()
